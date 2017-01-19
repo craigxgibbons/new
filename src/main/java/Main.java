@@ -38,7 +38,7 @@ public class Main {
 	      ctx.render("E=mc^2: 12 GeV = " + m.toString());
             })
             .get("testing", ctx -> {
-              ctx.render("Look at this!");
+              ctx.render("Look at this AGAIN!");
             })
             .get("db", ctx -> {
               boolean local = !"cedar-14".equals(System.getenv("STACK"));
