@@ -6,6 +6,6 @@ node {
 		sh "./gradlew clean test"
 	}
 	stage('Deploy') {
-		sh "git push https://git.heroku.comevening-scrubland-87923.git master"
+		sh "git push https://git.heroku.com/evening-scrubland-87923.git master"
 	}
 }
