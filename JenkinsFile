@@ -1,0 +1,11 @@
+node {
+	stage('Preparation') {
+		git 'https://github.com/craigxgibbons/new.git'
+	}
+	stage('Build') {
+		sh "./gradlew clean test"
+	}
+	stage('Deploy') {
+		sh "git push https://git.heroku.comevening-scrubland-87923.git master"
+	}
+}
