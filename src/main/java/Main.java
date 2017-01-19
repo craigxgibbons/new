@@ -31,10 +31,15 @@ public class Main {
 
             .get("hello", ctx -> {
               RelativisticModel.select();
-	      Amount<Mass> m = Amount.valueOf("12 GeV").to(KILOGRAM);
+
+	      String energy = System.getenv("ENERGY");
+
+	      Amount<Mass> m = Amount.valueOf(energy).to(KILOGRAM);
 	      ctx.render("E=mc^2: 12 GeV = " + m.toString());
             })
-
+            .get("testing", ctx -> {
+              ctx.render("Look at this!");
+            })
             .get("db", ctx -> {
               boolean local = !"cedar-14".equals(System.getenv("STACK"));
 
